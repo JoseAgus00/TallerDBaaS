@@ -37,7 +37,7 @@ namespace TallerDBaaS.Controllers
                 Models.Communication.grades_collection =
                     Models.Communication.database.GetCollection<Models.Grades>("Notas");
                 //Se crea un carnet al azar
-                Object carnet = generateRandomId(2);
+                Object carnet = generateRandomId(3);
                 Models.Communication.grades_collection.InsertOneAsync(new Models.Grades
                 {
 
@@ -51,7 +51,7 @@ namespace TallerDBaaS.Controllers
                 });
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
             catch
             {
